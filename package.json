@@ -1,0 +1,34 @@
+{
+  "name": "functional-styles",
+  "version": "0.0.1",
+  "description": "replace CSS with functional style modules",
+  "main": "lib/index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "test": "mocha --opts mocha.opts",
+    "test:watch": "mocha --opts mocha.opts --watch --reporter min",
+    "build": "NODE_ENV=production babel src --out-dir lib",
+    "lint": "eslint src",
+    "prepublish": "npm run lint && npm run test && npm run clean && npm run build"
+  },
+  "author": {
+    "name": "philholden",
+    "url": "https://twitter.com/phil_m_holden"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/philholden/googlish"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^5.8.29",
+    "babel-core": "^5.8.33",
+    "babel-eslint": "^4.1.4",
+    "eslint": "^1.9.0",
+    "eslint-config-rackt": "^1.1.1",
+    "eslint-plugin-react": "^3.8.0",
+    "expect": "^1.12.2",
+    "mocha": "^2.3.3",
+    "rimraf": "^2.4.3"
+  }
+}

@@ -1,0 +1,7 @@
+node_modules
+*.sublime-workspac
+.DS_Store
+*.sublime-project
+dist
+*.log
+lib
