@@ -24,7 +24,7 @@ toStyle(elementStyle, vars)
 
 ```
 
-Functional style object can also be used to create a styling function that accepts `vars` as config:
+Functional style objects can also be used to create a styling function that accepts `vars` as config:
 
 ```javascript
 const configElement = styleFn(elementStyle)
