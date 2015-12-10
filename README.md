@@ -1,32 +1,24 @@
-# Googlish
+# Functional Styles
 
-Enter a Google search style query and it will return a test function that returns true when its input satisfies the query.
+Functional Style Modules is an ES6 based format for creating configurable dynamic inline styles that can be shared between different ecosystems (e.g. React, Angular, vanilla JS).
 
-Works with double and single quoted inner strings:
+Styles can be configured with `vars`:
 
-```javascript
-const test = googlish('over fox "lazy dog"')
-test('the quick brown fox jumps over the lazy dog')
-//true
-
-const test = googlish('over fox "dog lazy"')
-test('the quick brown fox jumps over the lazy dog')
-//false
-```
-
-By default substrings count as matches and search is case insensitive. This can be changed:
+e.g.
 
 ```javascript
-let wholeWords = true
-let caseSensitive = true
-googlish('over fox', wholeWords, caseSensitive)
+const elementStyle = {
+  color: 'red',
+  padding: ({ padding = 2 }) => padding * padding
+}
+
+toStyle(elementStyle, { padding: 5 })
+
+//returns
+{
+  color: 'red',
+  padding: 25
+}
+
 ```
 
-Ideal for creating filter functions:
-
-```javascript
-const isLazyDog = googlish('"lazy dog"')
-const dogs = ['happy dog', 'lazy dog']
-const lazyDogs = dogs.filter(isLazyDog)
-// ['lazy dog']
-```
