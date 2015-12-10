@@ -1,6 +1,14 @@
 # Functional Styles
 
-Create functional ES2015 based style modules as an alternative to CSS. Putting a component's styles in its own module allows style logic to be shared between different ecosystems that support inline styles (e.g. React, Angular and vanilla JS).
+## Install
+
+```bash
+npm install functional-styles
+```
+
+## Style with Functions and Vars
+
+Create functional ES2015 based style modules as an alternative to CSS. Putting component's style logic into vanilla JS modules allows them to be shared among different ecosystems (e.g. React, Angular or vanilla JS).
 
 Style props can be functions:
 
@@ -14,9 +22,13 @@ const elementStyle = {
 
 __NOTE:__ Props which have style functions as values use ES2015 default values to make sure they render without errors when `vars` are not supplied.
 
+## Rendering with toStyle
+
 Styles can be updated at render time using a `vars` object: 
 
 ```javascript
+import { toStyle } from 'functional-styles'
+
 const vars = { padding: 5, bgColor: '#fee' }
 toStyle(elementStyle, vars)
 
@@ -25,7 +37,6 @@ toStyle(elementStyle, vars)
 //   padding: 7,
 //   backgroundColor: '#fee'
 // }
-
 ```
 
 Think of `vars` as being like the [Bootstrap's Less variables](http://getbootstrap.com/customize/#less-variables). They can be used for:
