@@ -55,9 +55,13 @@ __NOTE:__ Props which have style functions as values should use ES2015 default v
 
 ```javascript
 {
-  left: ({ margin = 2, padding = 5 }) => padding + margin
+  color: ({ keyColor = 'green' }) => keyColor
 }
 ```
+
+## Merging Styles
+
+## Component Styles
 
 
 
