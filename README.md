@@ -44,14 +44,14 @@ elementStyleFn(theme)
 // }
 ```
 
-Think of `vars` as being like the [Bootstrap's Less variables](http://getbootstrap.com/customize/#less-variables). They can be used for things like:
+Think of `vars` as being like the [Bootstrap's Less variables](http://getbootstrap.com/customize/#less-variables). They can be used for:
 
 * key colors
 * white space
 * fonts
 * margins and padding
 
-NOTE: props which have style functions as values should use ES2015 default values to make sure they render without errors when `vars` are not supplied.
+__NOTE:__ Props which have style functions as values should use ES2015 default values to make sure they render without errors when `vars` are not supplied.
 
 ```javascript
 {
