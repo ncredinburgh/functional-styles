@@ -11,10 +11,11 @@ const elementStyle = {
 }
 ```
 
-Styles can be updated using a `vars` object at render time: 
+Styles can be updated at render time using a `vars` object: 
 
 ```javascript
-toStyle(elementStyle, { padding: 5 })
+const vars = { padding: 5 }
+toStyle(elementStyle, vars)
 
 // {
 //   color: 'red',
