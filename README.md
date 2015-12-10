@@ -30,7 +30,7 @@ Functional style objects can also be used to create a styling function that acce
 const elementStyleFn = styleFn(elementStyle)
 ```
 
-Creating a locked down style that can only be updated by `vars`:
+This creates a locked down style that can only be updated by supplying `vars`:
 
 ```javascript
 import theme from './style/theme'
