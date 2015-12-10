@@ -1,6 +1,6 @@
 # Functional Styles
 
-Functional Style Modules is an ES2015 based format for creating configurable dynamic inline styles that can be shared between different ecosystems (e.g. React, Angular, vanilla JS).
+Create functional ES2015 based style modules as an alternative to CSS. Props can be functions so styles can be updated by `vars` at render time rather than compile time. Putting a component's styles its own module allows style logic to be shared between different ecosystems that support inline styles (e.g. React, Angular and vanilla JS).
 
 Styles can be configured with `vars`:
 
