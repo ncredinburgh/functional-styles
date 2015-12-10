@@ -22,7 +22,11 @@ Styles can be updated at render time using a `vars` object:
 import { toStyle } from 'functional-styles'
 import elementStyle from './elementStyle'
 
-const vars = { padding: 5, bgColor: '#fee' }
+const vars = {
+  padding: 5,
+  bgColor: '#fee'
+}
+
 toStyle(elementStyle, vars)
 
 // {
@@ -40,7 +44,7 @@ npm install --save functional-styles
 
 ## Vars
 
-Think of `vars` as being like the [Bootstrap's Less variables](http://getbootstrap.com/customize/#less-variables). They can be used for:
+Think of `vars` as being like [Bootstrap's Less variables](http://getbootstrap.com/customize/#less-variables). They can be used for:
 
 * key colors
 * white space
@@ -69,7 +73,7 @@ Props which have style functions as values use ES2015 default values to make sur
 (keyColor = 'green') => keyColor
 ```
 
-## Nesting for Component Styles
+## Component Styles Modules
 
 Functional style objects can be nested to provide all the styles needed for multiple elements in a component in their various states:
 
@@ -78,18 +82,24 @@ Functional style objects can be nested to provide all the styles needed for mult
 import {toStyle} from 'functional-styles'
 import myTheme from './myTheme'
 
-const spacingFn = ({spacing = 10}) => spacing
+// convention export `vars` to help with tooling
+// maybe in future export `varTypes` too
+export const vars = {
+  spacing: ({spacing = 10}) => spacing,
+  mainFont: (mainFont = 'Arial') => mainFont,
+  keyColor: ({keyColor: 'orange'}) => keyColor
+}
 
 const base = {
   display: 'inline-block',
-  paddingLeft: spacingFn,
-  paddingRight: spacingFn,
-  fontFamily: (mainFont = 'Arial') => mainFont,
+  paddingLeft: vars.spacing,
+  paddingRight: vars.spacing,
+  fontFamily: vars.mainFont,
   backgroundColor: '#ccc'
 }
 
 const selected = {
-  backgroundColor: ({keyColor: 'orange'} => keyColor)
+  backgroundColor: vars.keyColor
 }
 
 //use object spread, Object.assign or merge for cascade
