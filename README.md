@@ -1,17 +1,17 @@
 # Functional Styles
 
-Create functional ES2015 based style modules as an alternative to CSS. Putting a component's styles its own module allows style logic to be shared between different ecosystems that support inline styles (e.g. React, Angular and vanilla JS).
+Create functional ES2015 based style modules as an alternative to CSS. Putting a component's styles in its own module allows style logic to be shared between different ecosystems that support inline styles (e.g. React, Angular and vanilla JS).
 
 Style props can be functions:
 
 ```javascript
-const styleFn = {
+const elementStyle = {
   color: 'red',
   padding: ({ padding = 2 }) => padding * padding
 }
 ```
 
-So styles can be updated by `vars` at render time rather than compile time: 
+Styles can be updated using a `vars` object at render time: 
 
 ```javascript
 toStyle(elementStyle, { padding: 5 })
