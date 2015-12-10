@@ -1,7 +1,5 @@
 # Functional Styles
 
-## Install
-
 ```bash
 npm install functional-styles
 ```
@@ -18,16 +16,19 @@ const elementStyle = {
   padding: ({ padding = 2 }) => padding + 5
   backgroundColor: ({ bgColor = 'transparent' }) => bgColor
 }
+
+export default elementStyle
 ```
 
 __NOTE:__ Props which have style functions as values use ES2015 default values to make sure they render without errors when `vars` are not supplied.
 
-## Rendering with toStyle
+## Render with toStyle
 
 Styles can be updated at render time using a `vars` object: 
 
 ```javascript
 import { toStyle } from 'functional-styles'
+import elementStyle from './elementStyle'
 
 const vars = { padding: 5, bgColor: '#fee' }
 toStyle(elementStyle, vars)
