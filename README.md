@@ -27,7 +27,7 @@ toStyle(elementStyle, vars)
 Functional style objects can also be used to create a styling function that accepts `vars` as config:
 
 ```javascript
-const configElement = styleFn(elementStyle)
+const elementStyleFn = styleFn(elementStyle)
 ```
 
 Creating a locked down style that can only be updated by `vars`:
@@ -36,7 +36,7 @@ Creating a locked down style that can only be updated by `vars`:
 import theme from './style/theme'
 // theme = { padding: 5, fontFamily: 'Arial' }
 
-configElement(theme)
+elementStyleFn(theme)
 
 // {
 //   color: 'red',
