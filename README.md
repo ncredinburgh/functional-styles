@@ -73,7 +73,7 @@ Props which have style functions as values use ES2015 default values to make sur
 (keyColor = 'green') => keyColor
 ```
 
-## Component Styles Modules
+## Component Style Modules
 
 Functional style objects can be nested to provide all the styles needed for multiple elements in a component in their various states:
 
@@ -90,6 +90,7 @@ export const vars = {
   keyColor: ({keyColor: 'orange'}) => keyColor
 }
 
+// you may want to export style blocks too
 const base = {
   display: 'inline-block',
   paddingLeft: vars.spacing,
