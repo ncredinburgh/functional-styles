@@ -177,3 +177,8 @@ toStyle(myButtonStyle, myTheme)
 ## Function Styles Get Involved
 
 Conventions and names are work in progress please submit issues with comments, ideas and JSBins.
+
+## Thanks
+
+* NCR Edinburgh - letting me work on this
+* FormidableLabs - inspiration from Radium, Victory etc
