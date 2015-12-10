@@ -1,6 +1,6 @@
-import merge from 'merge'
+import { default as exMerge } from 'merge'
 
-export const styleFn = fnStyle => (vars = {}) => {
+export const toStyle = (fnStyle, vars = {}) => {
   const props = Object.keys(fnStyle)
   const reducer = (acc, prop) => {
     const value = fnStyle[prop]
@@ -9,7 +9,7 @@ export const styleFn = fnStyle => (vars = {}) => {
         acc[prop] = value(vars)
         break
       case 'object':
-        acc[prop] = styleFn(value)(vars)
+        acc[prop] = toStyle(value, vars)
         break
       default:
         acc[prop] = value
@@ -20,15 +20,4 @@ export const styleFn = fnStyle => (vars = {}) => {
   return props.reduce(reducer, {})
 }
 
-export const toStyle = (fnStyle = {}, vars = {}) => (
-  styleFn(fnStyle)(vars)
-)
-
-export const mergeStyles = (...styles) => merge.recursive(true, ...styles)
-
-// would be nice to auto extract vars used in a style for tooling
-// but need transpillers will cause problems
-export const extractVars = (fnStyle) => {
-  const text = fnStyle.toString()
-  text.match(/_ref\.([^;])/g)
-}
+export const merge = (...styles) => exMerge.recursive(true, ...styles)
