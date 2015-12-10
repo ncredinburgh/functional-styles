@@ -91,6 +91,7 @@ export const vars = {
 }
 
 // you may want to export style blocks too
+// to allow others to recompose styles
 const base = {
   display: 'inline-block',
   paddingLeft: vars.spacing,
@@ -172,3 +173,7 @@ toStyle(myButtonStyle, myTheme)
 //   },
 // }
 ```
+
+## Function Styles Get Involved
+
+Conventions and names are work in progress please submit issues with comments, ideas and JSBins.
