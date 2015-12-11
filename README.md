@@ -7,7 +7,7 @@ Style props can be functions:
 ```javascript
 const elementStyle = {
   color: 'red',
-  padding: ({ padding = 2 }) => padding + 5
+  padding: ({ padding = 2 }) => padding + 5,
   backgroundColor: ({ bgColor = 'transparent' }) => bgColor
 }
 
@@ -85,9 +85,9 @@ import myTheme from './myTheme'
 // convention export `vars` to help with tooling
 // maybe in future export `varTypes` too
 export const vars = {
-  spacing: ({spacing = 10}) => spacing,
-  mainFont: (mainFont = 'Arial') => mainFont,
-  keyColor: ({keyColor: 'orange'}) => keyColor
+  spacing: ({ spacing = 10 }) => spacing,
+  mainFont: ({ mainFont = 'Arial' }) => mainFont,
+  keyColor: ({ keyColor = 'orange' }) => keyColor
 }
 
 // you may want to export style blocks too
